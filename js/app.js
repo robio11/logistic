@@ -1,7 +1,5 @@
 /**
- * Nexzone Packers and Movers - Enhanced Smooth Web Application Logic
- * Mobile: 8690016052
- * Address: Bharat Mata Circle, Narayan Vihar, Mansarovar, Jaipur - 302026
+ * Logistic Ltd - Enhanced Smooth Web Application Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -162,21 +160,9 @@ function initBookingModal() {
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('modal-name')?.value;
-            const phone = document.getElementById('modal-phone')?.value;
-            const from = document.getElementById('modal-from')?.value;
-            const to = document.getElementById('modal-to')?.value;
-            const service = document.getElementById('modal-service-input')?.value;
-
-            const whatsappMessage = `Hello Nexzone Packers and Movers!\n\nI want to book a service:\n- Name: ${name}\n- Phone: ${phone}\n- Service: ${service}\n- Moving From: ${from}\n- Moving To: ${to}\n\nPlease confirm availability and details!`;
-
             closeModal();
             modalForm.reset();
-
-            showToastNotification('Thank you! Redirecting you to WhatsApp for instant confirmation...');
-            setTimeout(() => {
-                window.open(`https://wa.me/918690016052?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
-            }, 1000);
+            showToastNotification('Thank you! Your quote request has been submitted successfully.');
         });
     }
 }
@@ -190,18 +176,8 @@ function initContactForm() {
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('contact-name')?.value;
-        const phone = document.getElementById('contact-phone')?.value;
-        const service = document.getElementById('contact-service')?.value;
-        const message = document.getElementById('contact-msg')?.value;
-
-        const waText = `Hello Nexzone Packers and Movers!\n\nNew Inquiry from Website:\n- Name: ${name}\n- Phone: ${phone}\n- Service: ${service}\n- Note: ${message}\n\nPlease call me back!`;
-
-        showToastNotification('Inquiry sent successfully! Opening WhatsApp chat...');
+        showToastNotification('Thank you! Your inquiry has been submitted successfully.');
         contactForm.reset();
-        setTimeout(() => {
-            window.open(`https://wa.me/918690016052?text=${encodeURIComponent(waText)}`, '_blank');
-        }, 1000);
     });
 }
 
